@@ -51,11 +51,7 @@ export default function WhyChooseUs() {
         {/* Başlık */}
         <div className="max-w-2xl">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-deep">
-<<<<<<< HEAD
             Neden Hakan Topçu Rent a Car?
-=======
-            Neden Auriga?
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
           </span>
           <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             Kiralamayı kolay ve şeffaf hale getiriyoruz

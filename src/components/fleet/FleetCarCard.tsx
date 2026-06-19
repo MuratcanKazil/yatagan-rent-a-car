@@ -8,10 +8,7 @@
  *  min. kiralama yaşı, vites, yakıt — şık ikonlarla.
  * ============================================================ */
 
-<<<<<<< HEAD
 import { useCallback, useMemo, useState } from "react";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 import { useApp } from "@/context/AppContext";
 import { formatPrice } from "@/lib/currency";
 import {
@@ -20,7 +17,6 @@ import {
   LuggageIcon,
   GearIcon,
   FuelIcon,
-<<<<<<< HEAD
   PinIcon,
 } from "@/components/ui/icons";
 import CarImage from "@/components/ui/CarImage";
@@ -55,14 +51,6 @@ export default function FleetCarCard({ arac }: { arac: CarDTO }) {
   }, []);
 
   const handleCloseModal = useCallback(() => setModalAcik(false), []);
-=======
-} from "@/components/ui/icons";
-import CarImage from "@/components/ui/CarImage";
-import type { CarDTO } from "@/models/Car";
-
-export default function FleetCarCard({ arac }: { arac: CarDTO }) {
-  const { lang, currency } = useApp();
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl2 border border-black/5 bg-white shadow-card transition hover:-translate-y-1 hover:shadow-float">
@@ -105,7 +93,6 @@ export default function FleetCarCard({ arac }: { arac: CarDTO }) {
           <Spec icon={<AgeIcon className="h-4 w-4" />} label={`${arac.min_kiralama_yasi}+ yaş`} />
         </div>
 
-<<<<<<< HEAD
         {/* Müsait lokasyonlar */}
         {arac.lokasyonlar && arac.lokasyonlar.length > 0 && (
           <div className="mt-3 flex items-start gap-1.5 text-xs text-muted">
@@ -116,8 +103,6 @@ export default function FleetCarCard({ arac }: { arac: CarDTO }) {
           </div>
         )}
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
         {/* Fiyat + CTA */}
         <div className="mt-auto flex items-end justify-between pt-5">
           <div>
@@ -126,19 +111,14 @@ export default function FleetCarCard({ arac }: { arac: CarDTO }) {
             </span>
             <span className="text-sm text-muted"> / gün</span>
           </div>
-<<<<<<< HEAD
           <button
             onClick={() => setModalAcik(true)}
             className="rounded-lg bg-amber px-4 py-2.5 text-sm font-bold text-ink shadow-card transition hover:bg-amber-deep"
           >
-=======
-          <button className="rounded-lg bg-amber px-4 py-2.5 text-sm font-bold text-ink shadow-card transition hover:bg-amber-deep">
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             Rezervasyon Yap
           </button>
         </div>
       </div>
-<<<<<<< HEAD
 
       <ReservationModal
         open={modalAcik}
@@ -147,8 +127,6 @@ export default function FleetCarCard({ arac }: { arac: CarDTO }) {
         baslangicTarihi={baslangicTarihi}
         bitisTarihi={bitisTarihi}
       />
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     </article>
   );
 }

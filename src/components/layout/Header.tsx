@@ -12,17 +12,11 @@
  */
 
 import { useState } from "react";
-<<<<<<< HEAD
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 import Container from "@/components/ui/Container";
 import { CarIcon, MenuIcon, PinIcon } from "@/components/ui/icons";
 import { aktifLokasyonlar } from "@/lib/locations";
-=======
-import { useApp } from "@/context/AppContext";
-import Container from "@/components/ui/Container";
-import { CarIcon, MenuIcon } from "@/components/ui/icons";
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 import type { Lang } from "@/lib/i18n";
 import type { Currency } from "@/lib/currency";
 
@@ -38,18 +32,14 @@ const NAV_ITEMS: { key: "nav.fleet" | "nav.transfer" | "nav.blog" | "nav.faq" | 
 export default function Header() {
   const { t, lang, setLang, currency, setCurrency } = useApp();
   const [open, setOpen] = useState(false); // mobil menü durumu
-<<<<<<< HEAD
   const [lokAcik, setLokAcik] = useState(false); // lokasyonlar dropdown
   const lokasyonlar = aktifLokasyonlar();
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
   return (
     <header className="absolute inset-x-0 top-0 z-40">
       <Container>
         <nav className="flex items-center justify-between py-5">
           {/* Logo */}
-<<<<<<< HEAD
           <Link href="/" className="flex items-center gap-2 text-white">
             <span className="grid h-9 w-9 place-items-center rounded-lg bg-amber text-ink">
               <CarIcon className="h-5 w-5" strokeWidth={2.2} />
@@ -105,18 +95,6 @@ export default function Header() {
 
             {/* Diğer linkler (transfer, blog, sss, kosullar) */}
             {NAV_ITEMS.filter((i) => i.key !== "nav.fleet").map((item) => (
-=======
-          <a href="/" className="flex items-center gap-2 text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-amber text-ink">
-              <CarIcon className="h-5 w-5" strokeWidth={2.2} />
-            </span>
-            <span className="font-display text-lg font-bold tracking-tight">AURIGA</span>
-          </a>
-
-          {/* Masaüstü navigasyon */}
-          <ul className="hidden items-center gap-8 text-sm font-medium text-white/80 lg:flex">
-            {NAV_ITEMS.map((item) => (
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
               <li key={item.key}>
                 <a href={item.href} className="transition hover:text-white">
                   {t(item.key)}
@@ -154,21 +132,12 @@ export default function Header() {
             </select>
 
             {/* Üye girişi */}
-<<<<<<< HEAD
             <Link
               href="/admin"
               className="hidden rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20 sm:inline-block"
             >
               {t("nav.login")}
             </Link>
-=======
-            <a
-              href="/giris"
-              className="hidden rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20 sm:inline-block"
-            >
-              {t("nav.login")}
-            </a>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
             {/* Mobil menü tetiği */}
             <button
@@ -196,7 +165,6 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-<<<<<<< HEAD
 
             {/* Mobil lokasyon linkleri */}
             <div className="mt-2 border-t border-white/10 pt-2">
@@ -217,8 +185,6 @@ export default function Header() {
                 ))}
               </ul>
             </div>
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-3">
               {(["tr", "en"] as Lang[]).map((l) => (
                 <button
@@ -231,15 +197,9 @@ export default function Header() {
                   {l}
                 </button>
               ))}
-<<<<<<< HEAD
               <Link href="/admin" className="ml-auto rounded-full bg-amber px-4 py-1.5 text-xs font-bold text-ink">
                 {t("nav.login")}
               </Link>
-=======
-              <a href="/giris" className="ml-auto rounded-full bg-amber px-4 py-1.5 text-xs font-bold text-ink">
-                {t("nav.login")}
-              </a>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             </div>
           </Container>
         </div>

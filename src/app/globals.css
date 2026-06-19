@@ -52,7 +52,6 @@
     radial-gradient(55% 60% at 12% 80%, rgba(45, 212, 167, 0.10) 0%, transparent 55%);
 }
 
-<<<<<<< HEAD
 /* Modal açılış animasyonu (örn. ReservationModal) */
 @keyframes modal-pop-in {
   from {
@@ -68,8 +67,6 @@
   animation: modal-pop-in 0.15s ease-out;
 }
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 /* Native date/time input ikonunu koyu temaya uyarla */
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {

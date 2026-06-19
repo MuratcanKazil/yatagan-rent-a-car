@@ -13,10 +13,7 @@
 import { NextResponse } from "next/server";
 import { dbBaglan } from "@/lib/db";
 import { Car } from "@/models/Car";
-<<<<<<< HEAD
 import { LOKASYON_SLUGLARI } from "@/lib/locations";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
 // Her istekte güncel DB verisi gelsin (statik üretim yapılmasın)
 export const dynamic = "force-dynamic";
@@ -44,7 +41,6 @@ export async function POST(request: Request) {
 
     await dbBaglan();
 
-<<<<<<< HEAD
     // Gelen lokasyonları yalnızca tanımlı slug'larla sınırla (güvenlik)
     const gelenLokasyonlar: string[] = Array.isArray(body.lokasyonlar)
       ? body.lokasyonlar.filter((l: unknown): l is string =>
@@ -52,8 +48,6 @@ export async function POST(request: Request) {
         )
       : [];
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     // Sadece izin verilen alanları al (güvenli oluşturma)
     const yeniArac = await Car.create({
       marka: body.marka,
@@ -66,10 +60,7 @@ export async function POST(request: Request) {
       klima: body.klima,
       min_kiralama_yasi: body.min_kiralama_yasi,
       gunluk_fiyat: body.gunluk_fiyat,
-<<<<<<< HEAD
       lokasyonlar: gelenLokasyonlar,
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
       resim_url: body.resim_url,
     });
 

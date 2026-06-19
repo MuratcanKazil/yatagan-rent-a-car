@@ -71,7 +71,6 @@ export const FuelIcon = (p: IconProps) => (
     <path d="M3 21V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15M3 11h10M16 7l3 3v7a2 2 0 0 0 2-2V9l-3-4" />
   </svg>
 );
-<<<<<<< HEAD
 
 // --- Rezervasyon modal'ı ikonları ---
 
@@ -92,5 +91,3 @@ export const CloseIcon = (p: IconProps) => (
     <path d="M18 6 6 18M6 6l12 12" />
   </svg>
 );
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf

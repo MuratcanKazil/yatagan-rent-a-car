@@ -22,10 +22,7 @@
 import { useEffect, useState } from "react";
 import { VITES_SECENEKLERI, YAKIT_SECENEKLERI } from "@/lib/fleet";
 import type { VitesTipi, YakitTipi } from "@/lib/fleet";
-<<<<<<< HEAD
 import { aktifLokasyonlar } from "@/lib/locations";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 import type { CarDTO } from "@/models/Car";
 import {
   CarIcon,
@@ -47,10 +44,7 @@ interface FormState {
   min_kiralama_yasi: string;
   klima: boolean;
   gunluk_fiyat: string;
-<<<<<<< HEAD
   lokasyonlar: string[];
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   resim_url: string;
 }
 
@@ -65,10 +59,7 @@ const BOS_FORM: FormState = {
   min_kiralama_yasi: "21",
   klima: true,
   gunluk_fiyat: "",
-<<<<<<< HEAD
   lokasyonlar: [],
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   resim_url: "",
 };
 
@@ -92,15 +83,12 @@ export default function AdminDashboard() {
   // --- Silme durumu (hangi araç siliniyor) ---
   const [silinenId, setSilinenId] = useState<string | null>(null);
 
-<<<<<<< HEAD
   // --- Düzenleme durumu: null ise "ekleme modu", dolu ise o aracı düzenliyoruz ---
   const [duzenlenenId, setDuzenlenenId] = useState<string | null>(null);
 
   // Seçilebilir lokasyonlar (tek kaynaktan)
   const seciliebilirLokasyonlar = aktifLokasyonlar();
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   /* --------- Açılışta araçları çek --------- */
   useEffect(() => {
     let iptal = false;
@@ -126,7 +114,6 @@ export default function AdminDashboard() {
     setForm((f) => ({ ...f, [key]: value }));
   }
 
-<<<<<<< HEAD
   /* --------- Lokasyon seçimini aç/kapat --------- */
   function lokasyonToggle(slug: string) {
     setForm((f) => ({
@@ -170,8 +157,6 @@ export default function AdminDashboard() {
     setBasari(null);
   }
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   /* --------- Dosya seç → base64 data URL'e çevir (link yerine) --------- */
   function dosyaSec(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -211,16 +196,12 @@ export default function AdminDashboard() {
       min_kiralama_yasi: Number(form.min_kiralama_yasi),
       klima: form.klima,
       gunluk_fiyat: gunluk,
-<<<<<<< HEAD
       lokasyonlar: form.lokasyonlar,
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
       resim_url: form.resim_url.trim(),
     };
 
     try {
       setGonderiliyor(true);
-<<<<<<< HEAD
 
       // Düzenleme modundaysak PUT, değilse POST
       const duzenleme = duzenlenenId !== null;
@@ -229,16 +210,11 @@ export default function AdminDashboard() {
 
       const res = await fetch(url, {
         method,
-=======
-      const res = await fetch("/api/cars", {
-        method: "POST",
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
       const veri = await res.json();
       if (!res.ok) {
-<<<<<<< HEAD
         setFormHatasi(veri?.error ?? "İşlem başarısız oldu.");
         return;
       }
@@ -257,15 +233,6 @@ export default function AdminDashboard() {
         setForm(BOS_FORM);
         setBasari(`${payload.marka} ${payload.model} eklendi.`);
       }
-=======
-        setFormHatasi(veri?.error ?? "Araç eklenemedi.");
-        return;
-      }
-      // Anlık güncelleme: yeni aracı listenin başına ekle
-      setAraclar((onceki) => [veri as CarDTO, ...onceki]);
-      setForm(BOS_FORM);
-      setBasari(`${payload.marka} ${payload.model} eklendi.`);
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     } catch {
       setFormHatasi("Sunucuya ulaşılamadı.");
     } finally {
@@ -286,11 +253,8 @@ export default function AdminDashboard() {
       }
       // Anlık güncelleme: listeden çıkar
       setAraclar((onceki) => onceki.filter((a) => a.id !== id));
-<<<<<<< HEAD
       // Eğer silinen araç şu an düzenleniyorsa formu sıfırla
       if (duzenlenenId === id) duzenlemeIptal();
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     } catch {
       alert("Sunucuya ulaşılamadı.");
     } finally {
@@ -302,7 +266,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,420px)_1fr]">
-<<<<<<< HEAD
       {/* =================== A) EKLEME / DÜZENLEME FORMU =================== */}
       <section className="h-fit rounded-xl2 border border-black/5 bg-white p-6 shadow-card lg:sticky lg:top-6">
         <header className="mb-5">
@@ -320,14 +283,6 @@ export default function AdminDashboard() {
             {duzenlenenId
               ? "Bilgileri güncelle ve kaydet. Vazgeçmek için iptal et."
               : "Bilgileri doldur, fotoğraf linki yapıştır veya cihazdan yükle."}
-=======
-      {/* =================== A) EKLEME FORMU =================== */}
-      <section className="h-fit rounded-xl2 border border-black/5 bg-white p-6 shadow-card lg:sticky lg:top-6">
-        <header className="mb-5">
-          <h2 className="font-display text-lg font-bold text-ink">Yeni Araç Ekle</h2>
-          <p className="mt-1 text-sm text-muted">
-            Bilgileri doldur, fotoğraf linki yapıştır veya cihazdan yükle.
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
           </p>
         </header>
 
@@ -442,7 +397,6 @@ export default function AdminDashboard() {
             Klima var
           </label>
 
-<<<<<<< HEAD
           {/* Müsait lokasyonlar */}
           <Field label="Müsait Lokasyonlar">
             <div className="flex flex-wrap gap-2">
@@ -469,8 +423,6 @@ export default function AdminDashboard() {
             </p>
           </Field>
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
           {/* Fotoğraf: link + dosya yükleme */}
           <Field label="Fotoğraf (link veya yükle)">
             <input
@@ -516,7 +468,6 @@ export default function AdminDashboard() {
             </p>
           )}
 
-<<<<<<< HEAD
           {/* Gönder / Kaydet (+ düzenlemede İptal) */}
           <div className="flex gap-2">
             <button
@@ -543,16 +494,6 @@ export default function AdminDashboard() {
               </button>
             )}
           </div>
-=======
-          {/* Gönder */}
-          <button
-            type="submit"
-            disabled={gonderiliyor}
-            className="w-full rounded-lg bg-amber px-4 py-3 text-sm font-bold text-ink shadow-card transition hover:bg-amber-deep disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {gonderiliyor ? "Ekleniyor…" : "Ekle"}
-          </button>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
         </form>
       </section>
 
@@ -605,7 +546,6 @@ export default function AdminDashboard() {
                               {a.marka} {a.model}
                             </p>
                             <p className="font-mono text-xs text-muted">{a.yil}</p>
-<<<<<<< HEAD
                             {a.lokasyonlar && a.lokasyonlar.length > 0 && (
                               <p className="mt-0.5 text-[11px] font-semibold text-amber-deep">
                                 {a.lokasyonlar
@@ -618,8 +558,6 @@ export default function AdminDashboard() {
                                   .join(" · ")}
                               </p>
                             )}
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
                           </div>
                         </div>
                       </td>
@@ -644,7 +582,6 @@ export default function AdminDashboard() {
                           {fiyatTL(a.gunluk_fiyat)}
                         </span>
                       </td>
-<<<<<<< HEAD
                       {/* İşlemler: Düzenle + Sil */}
                       <td className="px-6 py-3 text-right">
                         <div className="flex items-center justify-end gap-2">
@@ -667,17 +604,6 @@ export default function AdminDashboard() {
                             {silinenId === a.id ? "Siliniyor…" : "Sil"}
                           </button>
                         </div>
-=======
-                      {/* Sil */}
-                      <td className="px-6 py-3 text-right">
-                        <button
-                          onClick={() => sil(a.id)}
-                          disabled={silinenId === a.id}
-                          className="rounded-lg border border-red-200 px-3 py-1.5 text-xs font-semibold text-red-600 transition hover:bg-red-50 disabled:opacity-50"
-                        >
-                          {silinenId === a.id ? "Siliniyor…" : "Sil"}
-                        </button>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
                       </td>
                     </tr>
                   ))}
@@ -702,7 +628,6 @@ export default function AdminDashboard() {
                       <span className="text-xs font-normal text-muted">/ gün</span>
                     </p>
                   </div>
-<<<<<<< HEAD
                   <div className="flex shrink-0 flex-col gap-1.5">
                     <button
                       onClick={() => duzenlemeBaslat(a)}
@@ -723,15 +648,6 @@ export default function AdminDashboard() {
                       {silinenId === a.id ? "…" : "Sil"}
                     </button>
                   </div>
-=======
-                  <button
-                    onClick={() => sil(a.id)}
-                    disabled={silinenId === a.id}
-                    className="shrink-0 rounded-lg border border-red-200 px-3 py-1.5 text-xs font-semibold text-red-600 transition hover:bg-red-50 disabled:opacity-50"
-                  >
-                    {silinenId === a.id ? "…" : "Sil"}
-                  </button>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
                 </li>
               ))}
             </ul>

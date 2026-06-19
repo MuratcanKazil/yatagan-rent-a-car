@@ -11,10 +11,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Manrope, Space_Mono } from "next/font/google";
 import { AppProvider } from "@/context/AppContext";
-<<<<<<< HEAD
 import { MARKA, SITE_URL, SITE_ACIKLAMA } from "@/lib/site";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 import "./globals.css";
 
 // Display rolü — karakterli, ölçülü kullanılır
@@ -39,7 +36,6 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-<<<<<<< HEAD
   metadataBase: new URL(SITE_URL),
   title: {
     default: `${MARKA} — Muğla, Marmaris, Milas, Akyaka Araç Kiralama`,
@@ -55,11 +51,6 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     type: "website",
   },
-=======
-  title: "Auriga — Premium Araç Kiralama & Transfer",
-  description:
-    "İzmir, Antalya ve İstanbul'da saatler içinde teslim. Şeffaf fiyat, depozitosuz seçenekler ve 7/24 yol yardımı.",
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

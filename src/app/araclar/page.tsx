@@ -4,33 +4,22 @@
  */
 
 import type { Metadata } from "next";
-<<<<<<< HEAD
 import Link from "next/link";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 import Header from "@/components/layout/Header";
 import Footer from "@/components/Footer";
 import FleetExplorer from "@/components/fleet/FleetExplorer";
 import { tumAraclar } from "@/lib/cars";
-<<<<<<< HEAD
 import { LOKASYON_SLUGLARI } from "@/lib/locations";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
 // DB bağlantısı gerektirdiği için build anında değil, her istekte render edilir
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-<<<<<<< HEAD
   title: "Araçlarımız — Hakan Topçu Rent a Car",
-=======
-  title: "Araçlarımız — Auriga Rent a Car",
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   description:
     "Ekonomiden lükse geniş filomuzu keşfedin. Vites, yakıt ve fiyata göre filtreleyin, dakikalar içinde rezervasyon yapın.",
 };
 
-<<<<<<< HEAD
 export default async function AraclarPage({
   searchParams,
 }: {
@@ -41,10 +30,6 @@ export default async function AraclarPage({
   // Query'den gelen lokasyon geçerliyse filtreyi onunla başlat
   const baslangicLokasyon =
     lokasyon && LOKASYON_SLUGLARI.includes(lokasyon) ? lokasyon : "";
-=======
-export default async function AraclarPage() {
-  const araclar = await tumAraclar();
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
   return (
     <main>
@@ -54,11 +39,7 @@ export default async function AraclarPage() {
         <div className="headlight-glow pointer-events-none absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
           <nav className="text-xs font-semibold text-white/50">
-<<<<<<< HEAD
             <Link href="/" className="transition hover:text-white">Ana Sayfa</Link>
-=======
-            <a href="/" className="transition hover:text-white">Ana Sayfa</a>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             <span className="px-1.5">/</span>
             <span className="text-amber">Araçlarımız</span>
           </nav>
@@ -71,11 +52,7 @@ export default async function AraclarPage() {
         </div>
       </section>
 
-<<<<<<< HEAD
       <FleetExplorer araclar={araclar} baslangicLokasyon={baslangicLokasyon} />
-=======
-      <FleetExplorer araclar={araclar} />
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
       <Footer />
     </main>

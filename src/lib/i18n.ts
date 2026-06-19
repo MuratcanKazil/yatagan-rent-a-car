@@ -31,11 +31,7 @@ export const translations: Record<Lang, Record<TranslationKey, string>> = {
     "nav.terms": "Kiralama Koşulları",
     "nav.login": "Üye Girişi",
 
-<<<<<<< HEAD
     "hero.badge": "Muğla · Marmaris · Milas · Akyaka — saatler içinde teslim",
-=======
-    "hero.badge": "İzmir · Antalya · İstanbul — saatler içinde teslim",
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     "hero.title1": "Yola çıkmanın",
     "hero.title2": "en pürüzsüz yolu.",
     "hero.sub":
@@ -73,11 +69,7 @@ export const translations: Record<Lang, Record<TranslationKey, string>> = {
     "nav.terms": "Rental Terms",
     "nav.login": "Sign in",
 
-<<<<<<< HEAD
     "hero.badge": "Muğla · Marmaris · Milas · Akyaka — delivered within hours",
-=======
-    "hero.badge": "İzmir · Antalya · İstanbul — delivered within hours",
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     "hero.title1": "The smoothest way",
     "hero.title2": "to hit the road.",
     "hero.sub":

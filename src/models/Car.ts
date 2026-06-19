@@ -62,14 +62,11 @@ const CarSchema = new Schema(
       required: [true, "Günlük fiyat zorunludur."],
       min: [0, "Fiyat negatif olamaz."],
     },
-<<<<<<< HEAD
     lokasyonlar: {
       type: [String],
       default: [],
       // Aracın müsait olduğu lokasyon slug'ları (örn. ["marmaris", "mugla"])
     },
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     resim_url: {
       type: String,
       default: "",
@@ -104,10 +101,7 @@ export interface CarDTO {
   klima: boolean;
   min_kiralama_yasi: number;
   gunluk_fiyat: number;
-<<<<<<< HEAD
   lokasyonlar: string[];
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   resim_url: string;
   createdAt?: string;
   updatedAt?: string;

@@ -25,7 +25,6 @@ import {
   type YakitTipi,
 } from "@/lib/fleet";
 
-<<<<<<< HEAD
 export default function FleetExplorer({
   araclar,
   baslangicLokasyon = "",
@@ -33,21 +32,14 @@ export default function FleetExplorer({
   araclar: CarDTO[];
   baslangicLokasyon?: string;
 }) {
-=======
-export default function FleetExplorer({ araclar }: { araclar: CarDTO[] }) {
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   // Fiyat sınırları veriden türetilir (slider aralığı)
   const { min: fiyatMin, max: fiyatMax } = useMemo(() => fiyatAraligi(araclar), [araclar]);
 
   // TEK state: tüm filtreler burada
-<<<<<<< HEAD
   const [filters, setFilters] = useState<FleetFilters>(() => ({
     ...varsayilanFiltreler(araclar),
     lokasyon: baslangicLokasyon,
   }));
-=======
-  const [filters, setFilters] = useState<FleetFilters>(() => varsayilanFiltreler(araclar));
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
   // Türetilmiş liste (saf fonksiyon) — filtre değişince yeniden hesaplanır
   const filtrelenmis = useMemo(() => araclariFiltrele(araclar, filters), [araclar, filters]);
@@ -68,15 +60,11 @@ export default function FleetExplorer({ araclar }: { araclar: CarDTO[] }) {
       yakit: f.yakit.includes(y) ? f.yakit.filter((x) => x !== y) : [...f.yakit, y],
     }));
 
-<<<<<<< HEAD
   const setLokasyon = (lokasyon: string) =>
     setFilters((f) => ({ ...f, lokasyon }));
 
   const clear = () =>
     setFilters({ ...varsayilanFiltreler(araclar), lokasyon: baslangicLokasyon });
-=======
-  const clear = () => setFilters(varsayilanFiltreler(araclar));
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
   return (
     <section className="bg-mist py-12 sm:py-16">
@@ -90,10 +78,7 @@ export default function FleetExplorer({ araclar }: { araclar: CarDTO[] }) {
             onFiyatChange={setFiyat}
             onVitesToggle={toggleVites}
             onYakitToggle={toggleYakit}
-<<<<<<< HEAD
             onLokasyonChange={setLokasyon}
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             onClear={clear}
           />
 

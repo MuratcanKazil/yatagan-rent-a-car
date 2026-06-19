@@ -53,11 +53,7 @@ export default function AdminLoginPage() {
             <CarIcon className="h-6 w-6" strokeWidth={2.2} />
           </span>
           <div className="text-center">
-<<<<<<< HEAD
             <p className="font-display text-lg font-bold text-white">HAKAN TOPÇU</p>
-=======
-            <p className="font-display text-lg font-bold text-white">AURIGA</p>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             <p className="text-sm text-white/50">Yönetim Paneli</p>
           </div>
         </div>

@@ -3,11 +3,7 @@ import AdminDashboard from "@/components/admin/AdminDashboard";
 import AdminHeader from "@/components/admin/AdminHeader";
 
 export const metadata: Metadata = {
-<<<<<<< HEAD
   title: "Yönetim Paneli — Hakan Topçu Rent a Car",
-=======
-  title: "Yönetim Paneli — Auriga Rent a Car",
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   robots: { index: false, follow: false },
 };
 

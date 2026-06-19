@@ -2,10 +2,7 @@
  * ============================================================
  *  src/app/api/cars/[id]/route.ts — Tekil araç ucu
  *  ------------------------------------------------------------
-<<<<<<< HEAD
  *    PUT    /api/cars/:id  → verilen id'ye sahip aracı günceller
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
  *    DELETE /api/cars/:id  → verilen id'ye sahip aracı siler
  *
  *  ÖNEMLİ (Next.js 16): Dinamik segment parametreleri artık bir
@@ -17,7 +14,6 @@ import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 import { dbBaglan } from "@/lib/db";
 import { Car } from "@/models/Car";
-<<<<<<< HEAD
 import { LOKASYON_SLUGLARI } from "@/lib/locations";
 
 export const dynamic = "force-dynamic";
@@ -95,11 +91,6 @@ export async function PUT(
   }
 }
 
-=======
-
-export const dynamic = "force-dynamic";
-
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 /* --------------------- DELETE: tek araç sil --------------------- */
 export async function DELETE(
   _request: Request,

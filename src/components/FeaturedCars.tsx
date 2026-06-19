@@ -5,10 +5,7 @@
  * Para birimi/dil: context yerine her kart kendi formatını yönetir.
  */
 
-<<<<<<< HEAD
 import Link from "next/link";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 import Container from "@/components/ui/Container";
 import {
   CarIcon,
@@ -41,11 +38,7 @@ export default function FeaturedCars({ araclar }: { araclar: CarDTO[] }) {
               Her yolculuğa uygun bir araç
             </h2>
           </div>
-<<<<<<< HEAD
           <Link
-=======
-          <a
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             href="/araclar"
             className="inline-flex items-center gap-1.5 text-sm font-bold text-ink transition hover:text-amber-deep"
           >
@@ -53,11 +46,7 @@ export default function FeaturedCars({ araclar }: { araclar: CarDTO[] }) {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
-<<<<<<< HEAD
           </Link>
-=======
-          </a>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
         </div>
 
         {araclar.length === 0 ? (
@@ -120,20 +109,12 @@ function CarCard({ arac }: { arac: CarDTO }) {
             </span>
             <span className="text-sm text-muted"> / gün</span>
           </div>
-<<<<<<< HEAD
           <Link
-=======
-          <a
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             href="/araclar"
             className="rounded-lg bg-ink px-4 py-2.5 text-sm font-bold text-white transition hover:bg-amber hover:text-ink"
           >
             Hemen Kirala
-<<<<<<< HEAD
           </Link>
-=======
-          </a>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
         </div>
       </div>
     </article>

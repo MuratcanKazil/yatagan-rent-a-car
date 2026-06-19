@@ -10,10 +10,7 @@
  * ============================================================ */
 
 import PriceRange from "./PriceRange";
-<<<<<<< HEAD
 import { aktifLokasyonlar } from "@/lib/locations";
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 import {
   VITES_SECENEKLERI,
   YAKIT_SECENEKLERI,
@@ -29,10 +26,7 @@ interface Props {
   onFiyatChange: (min: number, max: number) => void;
   onVitesToggle: (v: VitesTipi) => void;
   onYakitToggle: (y: YakitTipi) => void;
-<<<<<<< HEAD
   onLokasyonChange: (slug: string) => void;
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   onClear: () => void;
 }
 
@@ -43,16 +37,11 @@ export default function FilterSidebar({
   onFiyatChange,
   onVitesToggle,
   onYakitToggle,
-<<<<<<< HEAD
   onLokasyonChange,
   onClear,
 }: Props) {
   const lokasyonlar = aktifLokasyonlar();
 
-=======
-  onClear,
-}: Props) {
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   return (
     <aside className="rounded-xl2 border border-black/5 bg-white p-6 shadow-card lg:sticky lg:top-24">
       <div className="flex items-center justify-between">
@@ -65,7 +54,6 @@ export default function FilterSidebar({
         </button>
       </div>
 
-<<<<<<< HEAD
       {/* Lokasyon (teslim noktası) */}
       <FilterGroup baslik="Teslim Noktası">
         <div className="flex flex-wrap gap-2">
@@ -95,8 +83,6 @@ export default function FilterSidebar({
         </div>
       </FilterGroup>
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
       {/* Fiyat aralığı */}
       <FilterGroup baslik="Günlük Fiyat">
         <PriceRange

@@ -21,7 +21,6 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
 import { PinIcon, SearchIcon } from "@/components/ui/icons";
-<<<<<<< HEAD
 import { aktifLokasyonlar } from "@/lib/locations";
 
 type Tab = "rent" | "transfer";
@@ -29,18 +28,6 @@ type Tab = "rent" | "transfer";
 // Hizmet verilen lokasyonlar (tek kaynaktan)
 const LOKASYONLAR_LISTE = aktifLokasyonlar();
 const LOCATIONS = LOKASYONLAR_LISTE.map((l) => l.ad);
-=======
-
-type Tab = "rent" | "transfer";
-
-// Üretimde bu liste API/CMS'ten gelir
-const LOCATIONS = [
-  "İzmir Havalimanı (ADB)",
-  "İzmir Şehir Merkezi",
-  "Antalya Havalimanı (AYT)",
-  "İstanbul (IST)",
-];
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 
 /** YYYY-MM-DD biçimi (date input için) */
 function toInputDate(d: Date): string {
@@ -73,12 +60,9 @@ export default function BookingWidget() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     // Arama kriterlerini query param'a serialize et
-<<<<<<< HEAD
     // Seçilen alış yerinin slug'ını bul (örn. "Marmaris" → "marmaris")
     const secilenLok = LOKASYONLAR_LISTE.find((l) => l.ad === pickupLoc);
 
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
     const params = new URLSearchParams({
       type: tab,
       from: pickupLoc,
@@ -88,13 +72,9 @@ export default function BookingWidget() {
       returnDate,
       returnTime,
     });
-<<<<<<< HEAD
     if (secilenLok) params.set("lokasyon", secilenLok.slug);
 
     router.push(`/araclar?${params.toString()}`);
-=======
-    router.push(`/filo?${params.toString()}`);
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   }
 
   // Ortak input sınıfı (DRY)

@@ -35,11 +35,7 @@ export default function Footer() {
               <span className="grid h-9 w-9 place-items-center rounded-lg bg-amber text-ink">
                 <CarIcon className="h-5 w-5" strokeWidth={2.2} />
               </span>
-<<<<<<< HEAD
               <span className="font-display text-lg font-bold tracking-tight">HAKAN TOPÇU</span>
-=======
-              <span className="font-display text-lg font-bold tracking-tight">AURIGA</span>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               Yatağan merkezli premium araç kiralama. Şeffaf fiyat, yeni filo ve
@@ -100,11 +96,7 @@ export default function Footer() {
 
         {/* Telif satırı */}
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
-<<<<<<< HEAD
           <span>© {new Date().getFullYear()} Hakan Topçu Rent a Car. Tüm hakları saklıdır.</span>
-=======
-          <span>© {new Date().getFullYear()} Auriga Rent a Car. Tüm hakları saklıdır.</span>
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
           <span>Yatağan / Muğla</span>
         </div>
       </div>

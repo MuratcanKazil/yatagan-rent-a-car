@@ -17,10 +17,7 @@ export interface FleetFilters {
   fiyatMax: number;
   vites: VitesTipi[];
   yakit: YakitTipi[];
-<<<<<<< HEAD
   lokasyon: string; // "" → tümü, "marmaris" → sadece o lokasyonda müsait
-=======
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 }
 
 export function fiyatAraligi(araclar: CarDTO[]): { min: number; max: number } {
@@ -33,11 +30,7 @@ export function fiyatAraligi(araclar: CarDTO[]): { min: number; max: number } {
 
 export function varsayilanFiltreler(araclar: CarDTO[]): FleetFilters {
   const { min, max } = fiyatAraligi(araclar);
-<<<<<<< HEAD
   return { fiyatMin: min, fiyatMax: max, vites: [], yakit: [], lokasyon: "" };
-=======
-  return { fiyatMin: min, fiyatMax: max, vites: [], yakit: [] };
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
 }
 
 export function araclariFiltrele(araclar: CarDTO[], f: FleetFilters): CarDTO[] {
@@ -45,12 +38,8 @@ export function araclariFiltrele(araclar: CarDTO[], f: FleetFilters): CarDTO[] {
     const fiyatUygun = a.gunluk_fiyat >= f.fiyatMin && a.gunluk_fiyat <= f.fiyatMax;
     const vitesUygun = f.vites.length === 0 || f.vites.includes(a.vites_tipi);
     const yakitUygun = f.yakit.length === 0 || f.yakit.includes(a.yakit_tipi);
-<<<<<<< HEAD
     const lokasyonUygun =
       f.lokasyon === "" || (a.lokasyonlar ?? []).includes(f.lokasyon);
     return fiyatUygun && vitesUygun && yakitUygun && lokasyonUygun;
-=======
-    return fiyatUygun && vitesUygun && yakitUygun;
->>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
   });
 }
