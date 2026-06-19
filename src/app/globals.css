@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TASARIM SİSTEMİ — Tailwind v4 (CSS-first / @theme)
+   v4'te ayrı bir tailwind.config.ts YOKTUR. Renk, font, gölge
+   ve köşe yarıçapı token'larını burada tanımlıyoruz; Tailwind
+   bunlardan otomatik utility üretir:
+     --color-ink      → bg-ink / text-ink / border-ink
+     --font-display   → font-display
+     --shadow-card    → shadow-card
+     --radius-xl2     → rounded-xl2
+   ============================================================ */
+@theme {
+  /* Renkler */
+  --color-ink: #0B1120;        /* derin gece laciverti — hero zemini */
+  --color-surface: #131C2E;    /* koyu kartlar */
+  --color-line: #243044;       /* ince ayraçlar */
+  --color-amber: #F2A33C;      /* tek vurgu — far ışığı */
+  --color-amber-soft: #FFB661;
+  --color-amber-deep: #D98520;
+  --color-mist: #F7F8FA;       /* açık yüzeyler */
+  --color-muted: #5B6677;      /* ikincil metin */
+  --color-available: #2DD4A7;  /* "müsait" sinyali */
+
+  /* Fontlar — next/font değişkenlerine bağlanır (bkz. app/layout.tsx) */
+  --font-display: var(--font-space-grotesk), sans-serif; /* Space Grotesk */
+  --font-body: var(--font-manrope), sans-serif;          /* Manrope */
+  --font-mono: var(--font-space-mono), monospace;        /* Space Mono (veri) */
+
+  /* Gölgeler */
+  --shadow-card: 0 1px 2px rgba(11, 17, 32, 0.04), 0 12px 32px -12px rgba(11, 17, 32, 0.18);
+  --shadow-float: 0 24px 60px -20px rgba(11, 17, 32, 0.45);
+
+  /* Köşe yarıçapı */
+  --radius-xl2: 1.25rem;
+}
+
+/* Taban stilleri */
+@layer base {
+  body {
+    background-color: var(--color-mist);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* İMZA: hero arkasındaki yumuşak far parıltısı */
+.headlight-glow {
+  background:
+    radial-gradient(60% 50% at 78% 30%, rgba(242, 163, 60, 0.22) 0%, transparent 60%),
+    radial-gradient(55% 60% at 12% 80%, rgba(45, 212, 167, 0.10) 0%, transparent 55%);
+}
+
+<<<<<<< HEAD
+/* Modal açılış animasyonu (örn. ReservationModal) */
+@keyframes modal-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.modal-pop-in {
+  animation: modal-pop-in 0.15s ease-out;
+}
+
+=======
+>>>>>>> 830bfb9508b85ab729a6e1e5466138ba29748ddf
+/* Native date/time input ikonunu koyu temaya uyarla */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+/* Erişilebilirlik: hareket azaltma tercihine saygı */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
